@@ -1,8 +1,9 @@
 {
   "name": "react-query-helpers",
-  "version": "0.0.2",
+  "version": "0.0.10",
   "description": "Collection of useful types and other things for react-query",
-  "main": "dist/esm/index.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
   "repository": "https://github.com/adairrr/react-query-helpers",
   "author": "adairrr <32375605+adairrr@users.noreply.github.com>",
@@ -10,11 +11,18 @@
   "files": [
     "dist"
   ],
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/esm/index.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
   "engines": {
     "node": ">=10"
   },
   "scripts": {
-    "prebuild": "npm run clean && npm run test",
     "build": "npm run build:cjs && npm run build:esm",
     "build:cjs": "tsc -p tsconfig.build.json --module commonjs --outDir dist/cjs --target es5",
     "build:esm": "tsc -p tsconfig.build.json --module esNext --outDir dist/esm --target es6"
@@ -25,7 +33,7 @@
   "peerDependencies": {
     "@cosmjs/cosmwasm-stargate": ">=0.29.3",
     "@cosmjs/stargate": ">=0.29.3",
-    "@tanstack/react-query": ">=4.0.10",
+    "@tanstack/react-query": ">=4.4.0",
     "react": ">=18.2.0"
   },
   "devDependencies": {

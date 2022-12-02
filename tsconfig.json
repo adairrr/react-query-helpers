@@ -9,6 +9,8 @@
     "jsx": "react-jsx",
     "strict": true,
     "lib": ["ESNEXT", "DOM"],
+    "moduleResolution": "Node",
+    "target": "ES2015"
   },
 
   "exclude": ["node_modules", "dist", "templates", "website"]

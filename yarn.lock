@@ -4104,7 +4104,7 @@ __metadata:
   peerDependencies:
     "@cosmjs/cosmwasm-stargate": ">=0.29.3"
     "@cosmjs/stargate": ">=0.29.3"
-    "@tanstack/react-query": ">=4.0.10"
+    "@tanstack/react-query": ">=4.4.0"
     react: ">=18.2.0"
   languageName: unknown
   linkType: soft
