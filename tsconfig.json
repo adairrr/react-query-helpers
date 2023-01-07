@@ -1,17 +1,33 @@
-{
-  "compilerOptions": {
-    "baseUrl": ".",
-    "declaration": true,
-    "pretty": true,
-    "skipLibCheck": true,
-    "removeComments": true,
-    "esModuleInterop": true,
-    "jsx": "react-jsx",
-    "strict": true,
-    "lib": ["ESNEXT", "DOM"],
-    "moduleResolution": "Node",
-    "target": "ES2015"
-  },
 
-  "exclude": ["node_modules", "dist", "templates", "website"]
+{
+  "include": ["src/**/*"],
+  "exclude": ["/node_modules/", "./src/**/*.spec.ts", "src/**/*.no-commit.*", "generated"],
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "alwaysStrict": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "lib": ["es2015", "es2016", "es2017", "es2020", "dom"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "jsx": "react-jsx",
+    "noImplicitThis": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": true,
+    "outDir": "dist",
+    "rootDir": "src",
+    "sourceMap": true,
+    "strict": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "useDefineForClassFields": true,
+    "target": "es2015",
+    "baseUrl": "src"
+  }
 }
+

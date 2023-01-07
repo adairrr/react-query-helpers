@@ -9,8 +9,8 @@ import { ContextOptions } from '@tanstack/react-query/src/types'
  * overridden.
  * @todo figure out how to wrap the entire options instead of individuals!
  */
-export const useMutationOptionsMerger = ({ context }: ContextOptions = { context: defaultContext }) => {
-  const queryClient = useQueryClient({ context })
+export const useMutationOptionsMerger = () => {
+  const queryClient = useQueryClient()
   const mutationOptions = queryClient.getDefaultOptions().mutations
 
   return useMemo(
@@ -67,8 +67,8 @@ export const useMutationOptionsMerger = ({ context }: ContextOptions = { context
 /**
  * Hook that will return UseExecuteMutationOptions with the defaults.
  */
-export const useMergeDefaultMutationOptions = ({ context }: ContextOptions = { context: defaultContext }) => {
-  const defaultWrap = useMutationOptionsMerger({ context })
+export const useMergeDefaultMutationOptions = () => {
+  const defaultWrap = useMutationOptionsMerger()
 
   const merge = <TParams, TResponse>(
     options?: UseExecuteMutationOptions<TParams, TResponse>,

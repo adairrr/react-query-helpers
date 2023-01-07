@@ -1,31 +1,24 @@
 {
   "name": "react-query-helpers",
-  "version": "0.0.10",
+  "version": "0.1.2",
   "description": "Collection of useful types and other things for react-query",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "types": "dist/esm/index.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "repository": "https://github.com/adairrr/react-query-helpers",
   "author": "adairrr <32375605+adairrr@users.noreply.github.com>",
   "license": "MIT",
   "files": [
     "dist"
   ],
-  "exports": {
-    ".": {
-      "import": "./dist/esm/index.mjs",
-      "require": "./dist/index.js",
-      "types": "./dist/esm/index.d.ts"
-    },
-    "./package.json": "./package.json"
-  },
   "engines": {
     "node": ">=10"
   },
   "scripts": {
-    "build": "npm run build:cjs && npm run build:esm",
+    "build": "tsc",
+    "buildold": "npm run build:cjs && npm run build:esm",
     "build:cjs": "tsc -p tsconfig.build.json --module commonjs --outDir dist/cjs --target es5",
-    "build:esm": "tsc -p tsconfig.build.json --module esNext --outDir dist/esm --target es6"
+    "build:esm": "tsc -p tsconfig.build.json --module esNext --outDir dist/esm --target es6",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "lodash": "^4.17.21"
@@ -33,21 +26,22 @@
   "peerDependencies": {
     "@cosmjs/cosmwasm-stargate": ">=0.29.3",
     "@cosmjs/stargate": ">=0.29.3",
-    "@tanstack/react-query": ">=4.4.0",
+    "@tanstack/react-query": "^4.19.1",
     "react": ">=18.2.0"
   },
   "devDependencies": {
     "@cosmjs/cosmwasm-stargate": "^0.29.3",
     "@cosmjs/stargate": "^0.29.3",
     "@svgr/rollup": "^2.4.1",
-    "@tanstack/react-query": "^4.0.10",
-    "@tanstack/react-query-devtools": "^4.0.10",
+    "@tanstack/react-query": "4.19.1",
+    "@tanstack/react-query-devtools": "4.19.1",
     "@types/lodash": "^4.14.191",
-    "@types/node": "^17.0.39",
-    "@types/react": "^18.0.0",
-    "@types/react-dom": "^16.9.7",
+    "@types/node": "^18.11.10",
+    "@types/react": "^18.0.26",
+    "@types/react-dom": "^18.0.9",
     "eslint": "^8.21.0",
     "react": "^18.2.0",
+    "react-dom": "^18.0.9",
     "typescript": "4.9.3"
   },
   "packageManager": "yarn@3.3.0"
