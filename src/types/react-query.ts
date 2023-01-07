@@ -9,7 +9,7 @@ export interface ReactQueryOptions<TResponse, TData = TResponse> {
 // TODO: figure out what's wrong with this querykey
 export type UseReactQueryOptions<TResponse, TData = TResponse> = Omit<
   UseQueryOptions<TResponse, Error, TData, any>,
-  'queryKey' | 'queryFn' | 'initialData'
+  'queryKey' | 'queryFn'
 >
 
 export interface InfiniteReactQueryOptions<TResponse, TData = TResponse, TQueryData = TResponse> {
@@ -23,10 +23,8 @@ export type UseInfiniteReactQueryOptions<TResponse, TData = TResponse, TQueryDat
 
 export type KeyedReactQueryOptions<TResponse = unknown, TQueryKey extends QueryKey = QueryKey> = Omit<
   UseQueryOptions<TResponse, Error, TResponse, TQueryKey>,
-  'queryKey' | 'queryFn' | 'initialData'
-> & {
-  initialData?: () => undefined
-}
+  'queryKey' | 'queryFn'
+>
 
 export type UseExecuteMutationOptions<TParams, TResponse = ExecuteResult> = Omit<
   UseMutationOptions<TResponse, Error, TParams>,

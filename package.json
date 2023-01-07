@@ -1,6 +1,6 @@
 {
   "name": "react-query-helpers",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Collection of useful types and other things for react-query",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
